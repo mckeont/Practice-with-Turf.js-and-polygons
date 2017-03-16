@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Polygon Shapes</title>
+    <meta charset="utf-8" />
+    <link
+        rel="stylesheet"
+        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+    />
+
+    <!-- <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.33.1/mapbox-gl.css' rel='stylesheet' /> -->
+</head>
+<style>
+.sidebar {
+  position: absolute;
+  left: 0px;
+  width: 350px;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 20px;
+  font-size: 16px;
+  border: solid;
+  background-color: #A40000;
+}
+.main-heading {
+    font-size: 15px;
+}
+
+.button {
+  width: 100px;
+  height: 200px;
+  margin-top: 30px;
+  border: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 10%;
+}
+
+</style>
+  <!-- JS IMPORTS -->
+<script src= "js/jquery-2.2.0.js"></script>
+<script src= "js/leaflet.js"></script>
+<script src="js/politics.js"></script>
+<script src= "js/handSpiderScripts.js"></script>
+<script src= "js/woodLanders.js"></script>
+<body>
+
+  <div class="sidebar">
+                       <center><h2 id="main-heading">Turf-map</h2></center>
+<!---BUTTONS---->
+<h6><p> March  2017 </p></h6>
+<h4><p> Practice Mapbox Turf</p></h4>
+<a><button id="handSpiderCommunity" class="button"><img src="js/images/piDay.png" alt="HandSpider"></button><a>
+<a><button id="chipperSnippet" class="button"><img src="js/images/chipperSnippet.png" alt="ChipperSnippet"></button><a>
+  <a><button id="woodLand" class="button"><img src="js/images/birdSanct.png" alt="woodLand"></button><a>
+<!--BUTTONS-->
+  </div>
+//Select a tile.layer
+    <div id="map" style=" position: fixed; right: 0; left: 400px; top: 0; bottom: 0 "></div>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([39.7789912112384,-104.99633789062499], 5);
+        mapLink =
+            '<a href="http://thunderforest.com/">Thunderforest</a>';
+        L.tileLayer(
+            'https://api.mapbox.com/styles/v1/mckeont/cj0bkozt0002g2smcku4euw7r/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWNrZW9udCIsImEiOiJjajBiYnF4OTQwM2Y1MndwZzNob3FsMmV5In0.n-FVooZFRrMBcFpArgZbuw', {
+            attribution: 'Map data &copy; ' + mapLink,
+            maxZoom: 18,
+            }).addTo(map);
+
+//             var layer = L.mapbox.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png');
+// layer.on('ready', function() {
+//
+// });
+    </script>
+      <script src='https://api.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.33.1/mapbox-gl.js'></script>
+     <script src= "js/jquery-2.2.0.js"></script>
+  <script src="/js/leaflet.js"></script>
+     <script src="mapboxstyle.js"></script>
+</body>
+</html>
