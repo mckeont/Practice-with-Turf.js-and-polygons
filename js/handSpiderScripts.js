@@ -19,7 +19,7 @@ var piDay = L.icon({
 console.log(piDay);
 
 var woodLand = L.icon({
-  iconURL: 'C:\Users\Acer\Documents\GitHub\Mapbox_turf\js\images\marker-icon.png',
+  iconURL: 'js/images/birdSanct.png',
   iconSize: [64, 64],
   iconAnchor: [22, 94],
   popupAnchor: [-3, -76]
@@ -62,7 +62,7 @@ $("#woodLand").click(function(){
 });
 
 var layerPlottedWoodLanders = L.geoJSON(woodLanders, {
-   icon: woodLand
+  icon: woodLand
 }).bindPopup(function (layer) {
   return layer.feature.properties.name;
 }).addTo(map);
@@ -79,7 +79,22 @@ L.geoJSON(politics, {
 }).addTo(map);
 console.log(politics);
 
+var bufferedPoint = turf.buffer(woodLanders, 1, 'miles');
+L.geoJSON(bufferedPoint).addTo(map);
+console.log(bufferedPoint);
+
+
 });
 
-// var bufferedPoint = turf.buffer(woodLanders, 1, 'miles').addTo(map);
-// console.log(bufferedPoint);
+// var nullIsland = {
+//   type: 'Feature',
+//   geometry: {
+//     type: 'Point',
+//     coordinates: [42.418628, -76.849471]
+//   },
+//   properties: {
+//     name: 'Null Island'
+//   }
+// };
+//
+// var oneMileOut = turf.buffer(nullIsland, 1, 'miles');
